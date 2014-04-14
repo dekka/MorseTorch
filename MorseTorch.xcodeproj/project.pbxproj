@@ -21,6 +21,7 @@
 		00A0A48A18FC7418009EF634 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A0A46C18FC7418009EF634 /* UIKit.framework */; };
 		00A0A49218FC7418009EF634 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A0A49018FC7418009EF634 /* InfoPlist.strings */; };
 		00A0A49418FC7418009EF634 /* MorseTorchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0A49318FC7418009EF634 /* MorseTorchTests.m */; };
+		00A0A49E18FC76B0009EF634 /* straight key.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 00A0A49D18FC76B0009EF634 /* straight key.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		00A0A48F18FC7418009EF634 /* MorseTorchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MorseTorchTests-Info.plist"; sourceTree = "<group>"; };
 		00A0A49118FC7418009EF634 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		00A0A49318FC7418009EF634 /* MorseTorchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MorseTorchTests.m; sourceTree = "<group>"; };
+		00A0A49D18FC76B0009EF634 /* straight key.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "straight key.jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			children = (
 				00A0A47718FC7418009EF634 /* MorseTorchAppDelegate.h */,
 				00A0A47818FC7418009EF634 /* MorseTorchAppDelegate.m */,
+				00A0A49D18FC76B0009EF634 /* straight key.jpeg */,
 				00A0A47A18FC7418009EF634 /* Main.storyboard */,
 				00A0A47D18FC7418009EF634 /* MorseTorchViewController.h */,
 				00A0A47E18FC7418009EF634 /* MorseTorchViewController.m */,
@@ -229,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00A0A49E18FC76B0009EF634 /* straight key.jpeg in Resources */,
 				00A0A48118FC7418009EF634 /* Images.xcassets in Resources */,
 				00A0A47318FC7418009EF634 /* InfoPlist.strings in Resources */,
 				00A0A47C18FC7418009EF634 /* Main.storyboard in Resources */,
