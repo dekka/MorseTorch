@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0036D98D18FDC4CE008EE614 /* NSString+MorseCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0036D98C18FDC4CE008EE614 /* NSString+MorseCode.m */; };
+		0036D98F18FDD099008EE614 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0036D98E18FDD099008EE614 /* AVFoundation.framework */; };
 		00A0A46918FC7418009EF634 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A0A46818FC7418009EF634 /* Foundation.framework */; };
 		00A0A46B18FC7418009EF634 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A0A46A18FC7418009EF634 /* CoreGraphics.framework */; };
 		00A0A46D18FC7418009EF634 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A0A46C18FC7418009EF634 /* UIKit.framework */; };
@@ -35,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0036D98B18FDC4CE008EE614 /* NSString+MorseCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MorseCode.h"; sourceTree = "<group>"; };
+		0036D98C18FDC4CE008EE614 /* NSString+MorseCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MorseCode.m"; sourceTree = "<group>"; };
+		0036D98E18FDD099008EE614 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		00A0A46518FC7418009EF634 /* MorseTorch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorseTorch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A0A46818FC7418009EF634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		00A0A46A18FC7418009EF634 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0036D98F18FDD099008EE614 /* AVFoundation.framework in Frameworks */,
 				00A0A46B18FC7418009EF634 /* CoreGraphics.framework in Frameworks */,
 				00A0A46D18FC7418009EF634 /* UIKit.framework in Frameworks */,
 				00A0A46918FC7418009EF634 /* Foundation.framework in Frameworks */,
@@ -103,6 +109,7 @@
 		00A0A46718FC7418009EF634 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0036D98E18FDD099008EE614 /* AVFoundation.framework */,
 				00A0A46818FC7418009EF634 /* Foundation.framework */,
 				00A0A46A18FC7418009EF634 /* CoreGraphics.framework */,
 				00A0A46C18FC7418009EF634 /* UIKit.framework */,
@@ -118,6 +125,8 @@
 				00A0A47818FC7418009EF634 /* MorseTorchAppDelegate.m */,
 				00A0A49D18FC76B0009EF634 /* straight key.jpeg */,
 				00A0A47A18FC7418009EF634 /* Main.storyboard */,
+				0036D98B18FDC4CE008EE614 /* NSString+MorseCode.h */,
+				0036D98C18FDC4CE008EE614 /* NSString+MorseCode.m */,
 				00A0A47D18FC7418009EF634 /* MorseTorchViewController.h */,
 				00A0A47E18FC7418009EF634 /* MorseTorchViewController.m */,
 				00A0A48018FC7418009EF634 /* Images.xcassets */,
@@ -257,6 +266,7 @@
 				00A0A47F18FC7418009EF634 /* MorseTorchViewController.m in Sources */,
 				00A0A47918FC7418009EF634 /* MorseTorchAppDelegate.m in Sources */,
 				00A0A47518FC7418009EF634 /* main.m in Sources */,
+				0036D98D18FDC4CE008EE614 /* NSString+MorseCode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +471,7 @@
 				00A0A49918FC7418009EF634 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00A0A49A18FC7418009EF634 /* Build configuration list for PBXNativeTarget "MorseTorchTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +480,7 @@
 				00A0A49C18FC7418009EF634 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
