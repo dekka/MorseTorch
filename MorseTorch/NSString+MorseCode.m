@@ -21,10 +21,8 @@
         NSString *letter = [morseString substringWithRange:NSMakeRange(i, 1)];
         [symbols addObject:[NSString symbolForLetter:letter]];
     }
-    
     return symbols;
 }
-
 
 +(NSString *)symbolForLetter:(NSString *)letter
 {

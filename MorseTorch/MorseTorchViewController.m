@@ -17,7 +17,6 @@
 @property (strong, nonatomic) NSMutableArray *translatedSymbolsArray;
 @property (weak, nonatomic) AVCaptureDevice *myDevice;
 @property (strong, nonatomic) NSOperationQueue *flashQueue;
-
 @property (nonatomic, strong) IBOutlet UIButton *sendButton;
 @property (weak, nonatomic) IBOutlet UITextField *outputField;
 
@@ -49,23 +48,22 @@
 
 - (IBAction)sendButton:(id)sender
 {
-   //add if statement for whether input field length = 0
     if (self.textInputField.text.length != 0) {
         [self.sendButton setEnabled:NO];
         [self convertMorseCode];
         
         for (NSString *morseLetter in self.translatedSymbolsArray) {
             for (int i=0; i<morseLetter.length; i++) {
-                NSString *letter = [morseLetter substringWithRange:NSMakeRange(i, 1)];
-                if ([letter isEqualToString:@"."]) {
+                NSString *morseSymbol = [morseLetter substringWithRange:NSMakeRange(i, 1)];
+                if ([morseSymbol isEqualToString:@"."]) {
                     [self.flashQueue addOperationWithBlock:^{
                         [self flashDot];
                     }];
-                } else if ([letter isEqualToString:@"_"]) {
+                } else if ([morseSymbol isEqualToString:@"_"]) {
                     [self.flashQueue addOperationWithBlock:^{
                         [self flashDash];
                     }];
-                } else if ([letter isEqualToString:@" "]) {
+                } else if ([morseSymbol isEqualToString:@" "]) {
                     [self.flashQueue addOperationWithBlock:^{
                         [self flashWordSpace];
                     }];
@@ -87,14 +85,13 @@
 
 - (IBAction)cancelButton:(id)sender
 {
-    
+    [self.flashQueue performSelector:@selector(cancelAllOperations) withObject:nil afterDelay:1.0];
+    [self.sendButton setEnabled:YES];
 }
 
 -(void)convertMorseCode
 {
     self.translatedSymbolsArray = [NSString morseSymbolsForString:self.textInputField.text];
-    
-    
 }
 
 
