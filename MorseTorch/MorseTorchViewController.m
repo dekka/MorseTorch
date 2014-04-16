@@ -9,16 +9,17 @@
 #import "MorseTorchViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "NSString+MorseCode.h"
+#import "TorchController.h"
+#import <ProgressHUD/ProgressHUD.h>
 
-@interface MorseTorchViewController () <UITextViewDelegate, UITextFieldDelegate>
+@interface MorseTorchViewController () <UITextViewDelegate, UITextFieldDelegate, TorchControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *textInputField;
 @property (weak, nonatomic) NSString *inputText;
 @property (strong, nonatomic) NSMutableArray *translatedSymbolsArray;
-@property (weak, nonatomic) AVCaptureDevice *myDevice;
-@property (strong, nonatomic) NSOperationQueue *flashQueue;
 @property (nonatomic, strong) IBOutlet UIButton *sendButton;
 @property (weak, nonatomic) IBOutlet UITextField *outputField;
+@property (nonatomic, strong) TorchController *torchController;
 
 
 @end
@@ -29,11 +30,8 @@
 {
     [super viewDidLoad];
     self.textInputField.delegate = self;
-    
-    self.myDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    self.flashQueue = [NSOperationQueue new];
-    
-    self.flashQueue.maxConcurrentOperationCount = 1;
+    self.torchController = [[TorchController alloc] init];
+    self.torchController.delegate = self;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -50,42 +48,15 @@
 {
     if (self.textInputField.text.length != 0) {
         [self.sendButton setEnabled:NO];
-        [self convertMorseCode];
-        
-        for (NSString *morseLetter in self.translatedSymbolsArray) {
-            for (int i=0; i<morseLetter.length; i++) {
-                NSString *morseSymbol = [morseLetter substringWithRange:NSMakeRange(i, 1)];
-                if ([morseSymbol isEqualToString:@"."]) {
-                    [self.flashQueue addOperationWithBlock:^{
-                        [self flashDot];
-                    }];
-                } else if ([morseSymbol isEqualToString:@"_"]) {
-                    [self.flashQueue addOperationWithBlock:^{
-                        [self flashDash];
-                    }];
-                } else if ([morseSymbol isEqualToString:@" "]) {
-                    [self.flashQueue addOperationWithBlock:^{
-                        [self flashWordSpace];
-                    }];
-                }
-            }
-            [self.flashQueue addOperationWithBlock:^{
-                [self flashLettersSpace];
-            }];
-        }
-        [self.flashQueue addOperationWithBlock:^{
-            [[NSOperationQueue mainQueue]addOperationWithBlock:^{
-                [self.sendButton setEnabled:YES];
-                
-            }];
-        }];
+        [self.torchController convertToMorseCode:self.textInputField.text];  
     }
 }
 
 
 - (IBAction)cancelButton:(id)sender
 {
-    [self.flashQueue performSelector:@selector(cancelAllOperations) withObject:nil afterDelay:1.0];
+    [self.torchController cancelSending];
+    [ProgressHUD dismiss];
     [self.sendButton setEnabled:YES];
 }
 
@@ -94,39 +65,15 @@
     self.translatedSymbolsArray = [NSString morseSymbolsForString:self.textInputField.text];
 }
 
-
--(void)flashDot
+-(void)displayNewLetter:(NSString *)newLetter
 {
-    [self.myDevice lockForConfiguration:nil];
-    [self.myDevice setTorchMode:AVCaptureTorchModeOn];
-    [self.myDevice unlockForConfiguration];
-    usleep(100000);
-    [self.myDevice lockForConfiguration:nil];
-    [self.myDevice setTorchMode:AVCaptureTorchModeOff];
-    [self.myDevice unlockForConfiguration];
-    usleep(100000);
+    [ProgressHUD show:newLetter];
 }
 
--(void)flashDash
+-(void)doneTransmitting
 {
-    [self.myDevice lockForConfiguration:nil];
-    [self.myDevice setTorchMode:AVCaptureTorchModeOn];
-    [self.myDevice unlockForConfiguration];
-    usleep(300000);
-    [self.myDevice lockForConfiguration:nil];
-    [self.myDevice setTorchMode:AVCaptureTorchModeOff];
-    [self.myDevice unlockForConfiguration];
-    usleep(100000);
-}
-
--(void)flashLettersSpace
-{
-    usleep(200000);
-}
-
--(void)flashWordSpace
-{
-    usleep(400000);
+    [ProgressHUD dismiss];
+    [self.sendButton setEnabled:YES];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField

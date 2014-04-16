@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F36573F2-7745-4931-91C0-ACD68D8C8FF2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MorseTorch</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EE3215FD-5FCD-4898-B8AE-9346C295345E</key>
+		<string>ssh://github.com/dekka/MorseTorch.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MorseTorch.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EE3215FD-5FCD-4898-B8AE-9346C295345E</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/dekka/MorseTorch.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EE3215FD-5FCD-4898-B8AE-9346C295345E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EE3215FD-5FCD-4898-B8AE-9346C295345E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MorseTorch</string>
+		</dict>
+	</array>
+</dict>
+</plist>
