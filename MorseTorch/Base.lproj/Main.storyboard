@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryh-WQ-yfH">
-                                <rect key="frame" x="313" y="216" width="60" height="34"/>
+                                <rect key="frame" x="317" y="162" width="60" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -31,12 +31,18 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="disabled" title="Send">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="sendButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Xrk-fj-xlf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYp-bW-XpK">
-                                <rect key="frame" x="186" y="216" width="66" height="34"/>
+                                <rect key="frame" x="190" y="162" width="66" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -44,47 +50,37 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="cancelButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4eL-Qt-5iz"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="center" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Message" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zVj-vO-1Yc">
-                                <rect key="frame" x="164" y="150" width="240" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="center" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" placeholder="Enter Message to Translate" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zVj-vO-1Yc">
+                                <rect key="frame" x="164" y="51" width="240" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="6uu-DN-XOy"/>
+                                    <constraint firstAttribute="height" constant="47" id="6uu-DN-XOy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="A" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z7P-1b-v9j">
-                                <rect key="frame" x="236" y="20" width="97" height="87"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="D24-5A-sGv"/>
-                                    <constraint firstAttribute="height" constant="87" id="knh-3X-nLA"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zVj-vO-1Yc" firstAttribute="top" secondItem="Z7P-1b-v9j" secondAttribute="bottom" constant="43" id="3f3-Gi-09v"/>
+                            <constraint firstAttribute="centerX" secondItem="ryh-WQ-yfH" secondAttribute="centerX" constant="-63" id="6qk-P0-vs2"/>
                             <constraint firstItem="KdC-k8-8iG" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="H8I-kT-IyN"/>
-                            <constraint firstAttribute="centerX" secondItem="FYp-bW-XpK" secondAttribute="centerX" constant="65" id="N9t-Pj-nhu"/>
+                            <constraint firstItem="zVj-vO-1Yc" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="31" id="NRr-3K-fl4"/>
                             <constraint firstItem="KdC-k8-8iG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="OI3-UX-7Z6"/>
-                            <constraint firstItem="Z7P-1b-v9j" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="QHm-W0-9D5"/>
-                            <constraint firstAttribute="centerX" secondItem="Z7P-1b-v9j" secondAttribute="centerX" id="b5m-Zh-SNs"/>
+                            <constraint firstAttribute="centerX" secondItem="FYp-bW-XpK" secondAttribute="centerX" constant="61" id="U9C-fB-nfy"/>
+                            <constraint firstItem="ryh-WQ-yfH" firstAttribute="leading" secondItem="FYp-bW-XpK" secondAttribute="trailing" constant="61" id="b2b-iT-w6g"/>
                             <constraint firstItem="KdC-k8-8iG" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="bhA-lZ-IwC"/>
                             <constraint firstItem="KdC-k8-8iG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="gbG-6w-ib9"/>
-                            <constraint firstItem="ryh-WQ-yfH" firstAttribute="leading" secondItem="FYp-bW-XpK" secondAttribute="trailing" constant="61" id="haQ-IG-ZOg"/>
-                            <constraint firstItem="FYp-bW-XpK" firstAttribute="top" secondItem="zVj-vO-1Yc" secondAttribute="bottom" constant="36" id="lbM-Px-wEh"/>
                             <constraint firstAttribute="centerX" secondItem="zVj-vO-1Yc" secondAttribute="centerX" id="mMf-GW-oT0"/>
-                            <constraint firstItem="ryh-WQ-yfH" firstAttribute="top" secondItem="zVj-vO-1Yc" secondAttribute="bottom" constant="36" id="pW8-8Y-5BA"/>
+                            <constraint firstItem="ryh-WQ-yfH" firstAttribute="top" secondItem="zVj-vO-1Yc" secondAttribute="bottom" constant="64" id="pW8-8Y-5BA"/>
                             <constraint firstAttribute="trailing" secondItem="KdC-k8-8iG" secondAttribute="trailing" id="q1y-VF-BbR"/>
-                            <constraint firstAttribute="centerX" secondItem="ryh-WQ-yfH" secondAttribute="centerX" constant="-59" id="qZj-1q-wjr"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="KdC-k8-8iG" secondAttribute="bottom" id="t9C-Ft-KiI"/>
                             <constraint firstAttribute="bottom" secondItem="KdC-k8-8iG" secondAttribute="bottom" id="vts-Ax-7fk"/>
                             <constraint firstItem="FYp-bW-XpK" firstAttribute="baseline" secondItem="ryh-WQ-yfH" secondAttribute="baseline" id="zab-O2-ivy"/>
@@ -93,7 +89,6 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="outputField" destination="Z7P-1b-v9j" id="rMS-fK-T9n"/>
                         <outlet property="sendButton" destination="ryh-WQ-yfH" id="uJE-6U-UGG"/>
                         <outlet property="textInputField" destination="zVj-vO-1Yc" id="Y6H-z4-r6L"/>
                     </connections>

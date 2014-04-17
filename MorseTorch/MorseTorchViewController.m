@@ -12,15 +12,14 @@
 #import "TorchController.h"
 #import <ProgressHUD/ProgressHUD.h>
 
-@interface MorseTorchViewController () <UITextViewDelegate, UITextFieldDelegate, TorchControllerDelegate>
+@interface MorseTorchViewController () <UITextFieldDelegate, TorchControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *textInputField;
-@property (weak, nonatomic) NSString *inputText;
-@property (strong, nonatomic) NSMutableArray *translatedSymbolsArray;
+@property (nonatomic, strong) IBOutlet UITextField *textInputField;
+@property (nonatomic, weak) NSString *inputText;
+@property (nonatomic, strong) NSMutableArray *translatedSymbolsArray;
 @property (nonatomic, strong) IBOutlet UIButton *sendButton;
-@property (weak, nonatomic) IBOutlet UITextField *outputField;
+@property (nonatomic, weak) IBOutlet UITextField *outputField;
 @property (nonatomic, strong) TorchController *torchController;
-
 
 @end
 
@@ -48,16 +47,14 @@
 {
     if (self.textInputField.text.length != 0) {
         [self.sendButton setEnabled:NO];
-        [self.torchController convertToMorseCode:self.textInputField.text];  
+        [self.torchController convertToMorseCode:self.textInputField.text];
     }
 }
-
 
 - (IBAction)cancelButton:(id)sender
 {
     [self.torchController cancelSending];
-    [ProgressHUD dismiss];
-    [self.sendButton setEnabled:YES];
+    [self doneTransmitting];
 }
 
 -(void)convertMorseCode
@@ -81,8 +78,6 @@
     [textField resignFirstResponder];
     return YES;
 }
-
-
 
 @end
 

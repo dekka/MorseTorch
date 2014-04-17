@@ -13,7 +13,7 @@
 @interface TorchController ()
 
 @property (nonatomic, strong) AVCaptureDevice *myDevice;
-@property (strong, nonatomic) NSOperationQueue *flashQueue;
+@property (nonatomic, strong) NSOperationQueue *flashQueue;
 
 
 @end
@@ -25,8 +25,7 @@
     self = [super init];
     if (self) {
         self.myDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-        self.flashQueue = [NSOperationQueue new];
-        
+        self.flashQueue = [NSOperationQueue new];        
         self.flashQueue.maxConcurrentOperationCount = 1;
     }
     return self;

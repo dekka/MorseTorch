@@ -12,8 +12,8 @@
 
 @optional
 -(void)displayNewLetter:(NSString *)newLetter;
--(void)doneTransmitting;
 
+-(void)doneTransmitting;
 
 
 @end
