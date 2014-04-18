@@ -48,7 +48,7 @@
                 [self.flashQueue addOperationWithBlock:^{
                     [self flashDot];
                 }];
-            } else if ([morseSymbol isEqualToString:@"_"]) {
+            } else if ([morseSymbol isEqualToString:@"-"]) {
                 [self.flashQueue addOperationWithBlock:^{
                     [self flashDash];
                 }];

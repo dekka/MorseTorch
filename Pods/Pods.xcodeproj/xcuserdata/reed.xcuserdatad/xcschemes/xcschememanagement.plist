@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-GPUImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>9979A88E3DC745D78D255F3E</key>
+		<key>0700A8822A20412A8B65E8F0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AD4D89C2859D4A15ABE5D3D1</key>
+		<key>7895C80CCB0640B0BB3B1940</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DFD89D1D43F74A029749B418</key>
 		<dict>
 			<key>primary</key>
 			<true/>

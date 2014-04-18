@@ -12,11 +12,8 @@
 
 +(NSMutableArray *)morseSymbolsForString:(NSString *)morseString
 {
-    // Create an array to hold symbols
     NSMutableArray *symbols = [[NSMutableArray alloc] init];
-    // convert the string to uppercase
     morseString = [morseString uppercaseString];
-    // lookup symbols for string in a for loop
     for (int i=0; i<morseString.length; i++) {
         NSString *letter = [morseString substringWithRange:NSMakeRange(i, 1)];
         [symbols addObject:[NSString symbolForLetter:letter]];
@@ -56,7 +53,6 @@
                                 };
     
     return [morseDict objectForKey:morseLetter];
-
 }
 
 +(NSString *)symbolForLetter:(NSString *)letter
@@ -92,7 +88,6 @@
     
     return [morseDict objectForKey:letter];
 }
-
 
 @end
 

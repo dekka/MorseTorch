@@ -18,7 +18,6 @@
 @property (nonatomic, weak) NSString *inputText;
 @property (nonatomic, strong) NSMutableArray *translatedSymbolsArray;
 @property (nonatomic, strong) IBOutlet UIButton *sendButton;
-@property (nonatomic, weak) IBOutlet UITextField *outputField;
 @property (nonatomic, strong) TorchController *torchController;
 
 @end
@@ -77,6 +76,14 @@
 {
     [textField resignFirstResponder];
     return YES;
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if ([self.textInputField isFirstResponder])
+    {
+        [self.textInputField resignFirstResponder];
+    }
 }
 
 @end
